@@ -7,6 +7,8 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'thaerkh/vim-workspace'
 
+Plug 'arcticicestudio/nord-vim'
+
 " git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
@@ -19,8 +21,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
 " PYTHON INTEGRATION
-let g:python2_host_prog = '/usr/local/bin/python'
-let g:python3_host_prog = '/usr/local/bin/python3'
+let g:python2_host_prog = '/usr/bin/python2'
+let g:python3_host_prog = '/usr/bin/python3'
 
 " TABS & SPACES
 set tabstop=2
@@ -30,6 +32,7 @@ set smarttab
 
 " UI
 set number
+colorscheme nord
 
 " KEYMAP
 let mapleade = ','
