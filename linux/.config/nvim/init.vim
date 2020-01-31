@@ -3,9 +3,10 @@ call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'preservim/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-
+" user-interface
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'thaerkh/vim-workspace'
+Plug 'dyng/ctrlsf.vim'
 
 Plug 'arcticicestudio/nord-vim'
 
@@ -16,13 +17,14 @@ Plug 'airblade/vim-gitgutter'
 " auto close brackets
 Plug 'jiangmiao/auto-pairs'
 
-" autocompletion
+" code
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
 " PYTHON INTEGRATION
-let g:python2_host_prog = '/usr/bin/python2'
-let g:python3_host_prog = '/usr/bin/python3'
+let g:python2_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
 
 " TABS & SPACES
 set tabstop=2
@@ -35,7 +37,7 @@ set number
 colorscheme nord
 
 " KEYMAP
-let mapleade = ','
+let mapleader = ','
 
 " disable arrow keys in normal mode
 noremap <Up> <Nop>
@@ -53,3 +55,6 @@ nnoremap <esc> :noh<return><esc>
 " NerdTree
 nmap <silent> <leader>k :NERDTreeToggle<CR>
 nmap <silent> <leader>y :NERDTreeFind<CR>
+
+" Ctrlf
+map <C-f> :CtrlSF
