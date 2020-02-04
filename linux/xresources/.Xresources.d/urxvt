@@ -1,6 +1,6 @@
-URxvt.font	                     	:xft:JetBrains Mono:size=11:style=Regular
-URxvt.italicFont 									:xft:JetBrains Mono:size=11:style=Italic
-URxvt.boldFont 										:xft:JetBrains Mono:size=11:style=Bold
+URxvt.font	                     	:xft:Source Code Pro:size=11:style=Medium
+URxvt.italicFont 									:xft:Source Code Pro:size=11:style=Italic
+URxvt.boldFont 										:xft:Source Code Pro:size=11:style=Bold
 
 URxvt.depth:                      32
 URxvt.background:                 [100]#222D31

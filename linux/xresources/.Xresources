@@ -1,4 +1,5 @@
-Xft.dpi:       144
+! TODO make separte config for desktop & laptop for DPI
+Xft.dpi:       96
 Xft.antialias: true
 Xft.hinting:   true
 Xft.rgba:      rgb
