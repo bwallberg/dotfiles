@@ -10,6 +10,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'vim-airline/vim-airline'
 
 " git
 Plug 'tpope/vim-fugitive'
@@ -43,6 +44,7 @@ set smarttab
 " UI
 set number
 colorscheme nord
+let g:airline_powerline_fonts = 1
 
 " KEYMAP
 let mapleader = ','
@@ -52,12 +54,12 @@ nmap <silent> § :startinsert<CR>
 imap <silent> § <esc>
 vmap <silent> $ <esc>
 
+" configure smooth scrolling using comfortable motion
 let g:comfortable_motion_scroll_down_key = "j"
 let g:comfortable_motion_scroll_up_key = "k"
 let g:comfortable_motion_no_default_key_mappings = 1
 nnoremap <silent> <C-j> :call comfortable_motion#flick(100)<CR>
 nnoremap <silent> <C-k> :call comfortable_motion#flick(-100)<CR>
-
 
 " disable arrow keys in normal mode
 noremap <Up> <Nop>
