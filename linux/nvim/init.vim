@@ -21,6 +21,7 @@ Plug 'jiangmiao/auto-pairs'
 
 " code
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 call plug#end()
 
@@ -34,6 +35,9 @@ let g:coc_global_extensions = [
     \ 'coc-tsserver',
     \ 'coc-json',
     \ 'coc-eslint']
+
+" JS Syntax
+let g:javascript_plugin_jsdoc = 1
 
 " TABS & SPACES
 set tabstop=2
