@@ -23,6 +23,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'heavenshell/vim-jsdoc'
 call plug#end()
 
 " PYTHON INTEGRATION
@@ -44,6 +45,7 @@ set tabstop=2
 set shiftwidth=2
 set softtabstop=0
 set smarttab
+set wrap!
 
 " UI
 set number
