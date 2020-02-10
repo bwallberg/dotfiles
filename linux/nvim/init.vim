@@ -52,10 +52,14 @@ set hidden
 set number
 colorscheme nord
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " KEYMAP
 let mapleader = ','
 
+map <silent> <C-a> :bprev<CR>
+map <silent> <C-s> :bnext<CR>
+map <silent> <C-q> :bd<CR>
 " Toggle modes using tilde
 nmap <silent> § :startinsert<CR>
 imap <silent> § <esc>
@@ -75,11 +79,13 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 
 " vim-workspace
+let g:workspace_session_disable_on_args = 1
 let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
 
 "LeaderF
 map <silent> <C-p> :Leaderf file --popup<CR>
 map <silent> <S-p> :Leaderf command --popup<CR>
+let g:Lf_CommandMap = {'<C-X>': ['<C-v>'], '<C-]>': ['<C-h>']}
 
 " Switch Session
 map <leader>p :source ~/.config/nvim/sessions/
