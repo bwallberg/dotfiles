@@ -46,10 +46,18 @@ set shiftwidth=2
 set softtabstop=0
 set smarttab
 set wrap!
+set autoindent
+set smartindent
+
+" SEARCH
+set hlsearch
+set smartcase
+set ignorecase
 
 " UI
 set hidden
 set number
+set showmatch
 colorscheme nord
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
@@ -57,13 +65,16 @@ let g:airline#extensions#tabline#enabled = 1
 " KEYMAP
 let mapleader = ','
 
+" Switch between buffers
 map <silent> <C-a> :bprev<CR>
 map <silent> <C-s> :bnext<CR>
 map <silent> <C-q> :bd<CR>
+
 " Toggle modes using tilde
 nmap <silent> § :startinsert<CR>
 imap <silent> § <esc>
 vmap <silent> $ <esc>
+tnoremap <silent> <esc> <C-\><C-n>
 
 " configure smooth scrolling using comfortable motion
 let g:comfortable_motion_scroll_down_key = "j"
