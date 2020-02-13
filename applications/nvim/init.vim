@@ -61,7 +61,7 @@ set showmatch
 colorscheme nord
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-
+   
 " KEYMAP
 let mapleader = ','
 
@@ -88,6 +88,10 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+" Jump between empty lines down & up
+map <silent> <C-space> {
+map <silent> <space> }
 
 " vim-workspace
 let g:workspace_session_disable_on_args = 1
