@@ -73,7 +73,7 @@ map <silent> <C-q> :bd<CR>
 " Toggle modes using tilde
 nmap <silent> § :startinsert<CR>
 imap <silent> § <esc>
-vmap <silent> $ <esc>
+vmap <silent> § <esc>
 tnoremap <silent> <esc> <C-\><C-n>
 
 " configure smooth scrolling using comfortable motion
