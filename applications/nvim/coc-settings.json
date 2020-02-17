@@ -1,5 +1,6 @@
 {
-  "languageserver": {
+	"coc.source.buffer.enable": false,
+	"languageserver": {
     "ccls": {
       "command": "ccls",
       "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],

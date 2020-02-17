@@ -16,9 +16,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
-" auto close brackets
-Plug 'jiangmiao/auto-pairs'
-
 " code
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
@@ -46,8 +43,6 @@ set shiftwidth=2
 set softtabstop=0
 set smarttab
 set wrap!
-set autoindent
-set smartindent
 
 " SEARCH
 set hlsearch
@@ -93,6 +88,14 @@ noremap <Right> <Nop>
 map <silent> <C-space> {
 map <silent> <space> }
 
+" Move selected lines up & down
+nnoremap <S-j> :m .+1<CR>==
+nnoremap <S-k> :m .-2<CR>==
+inoremap <S-j> <Esc>:m .+1<CR>==gi
+inoremap <S-k> <Esc>:m .-2<CR>==gi
+vnoremap <S-j> :m '>+1<CR>gv=gv
+vnoremap <S-k> :m '<-2<CR>gv=gv
+
 " vim-workspace
 let g:workspace_session_disable_on_args = 1
 let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
@@ -113,4 +116,8 @@ nmap <silent> <leader>k :NERDTreeToggle<CR>
 nmap <silent> <leader>y :NERDTreeFind<CR>
 
 " Ctrlf
-map <C-f> :CtrlSF
+map <C-f> :CtrlSF<space>
+
+let g:ctrlsf_auto_focus = {
+    \ "at": "start",
+		\ }
