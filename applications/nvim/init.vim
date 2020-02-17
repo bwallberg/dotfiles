@@ -100,7 +100,6 @@ let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
 
 "LeaderF
 map <silent> <C-p> :Leaderf file --popup<CR>
-map <silent> <S-p> :Leaderf command --popup<CR>
 let g:Lf_CommandMap = {'<C-X>': ['<C-v>'], '<C-]>': ['<C-h>']}
 
 " Switch Session
