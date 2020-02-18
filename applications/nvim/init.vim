@@ -79,6 +79,10 @@ let g:nord_underline = 1
 let g:nord_italic_comments = 1
 colorscheme nord
 
+" vim-workspace
+let g:workspace_session_disable_on_args = 1
+let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
+
 " KEYMAP
 let mapleader = ','
 
@@ -118,9 +122,6 @@ nnoremap <silent> <S-k> :m .-2<CR>==
 vnoremap <silent> <S-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <S-k> :m '<-2<CR>gv=gv
 
-" vim-workspace
-let g:workspace_session_disable_on_args = 1
-let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
 
 "LeaderF
 map <silent> <C-p> :Leaderf file --popup<CR>
