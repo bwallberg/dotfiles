@@ -10,3 +10,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # install fonts
 sudo pacman -S powerline-fonts
+
+# install ag
+sudo pacman -S the_silver_searcher
