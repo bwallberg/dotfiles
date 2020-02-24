@@ -80,6 +80,7 @@ colorscheme nord
 " vim-workspace
 let g:workspace_session_disable_on_args = 1
 let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
+let g:workspace_persist_undo_history = 0
 
 " KEYMAP
 let mapleader = ','
@@ -133,7 +134,7 @@ nnoremap <esc> :noh<return><esc>
 
 " NerdTree
 nmap <silent> <leader>k :NERDTreeToggle<CR>
-nmap <silent> <leader>y :NERDTreeFind<CR>
+nmap <silent> <leader>l :NERDTreeFind<CR>
 
 " Ctrlf
 map <C-f> :CtrlSF<space>
