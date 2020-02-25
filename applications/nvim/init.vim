@@ -15,9 +15,10 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'camspiers/animate.vim'
+Plug 'camspiers/lens.vim'
 
 " git
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " code syntax & autocomplete
@@ -81,6 +82,8 @@ colorscheme nord
 let g:workspace_session_disable_on_args = 1
 let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
 let g:workspace_persist_undo_history = 0
+" Don't restore NERDTree when opening a session
+autocmd VimLeave * NERDTreeClose
 
 " KEYMAP
 let mapleader = ','
