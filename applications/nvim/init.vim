@@ -33,7 +33,7 @@ Plug 'heavenshell/vim-jsdoc'
 call plug#end()
 
 " PYTHON INTEGRATION
-let g:python2_host_prog = '/usr/local/bin/python2'
+let g:loaded_python_provider = 0
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 " CODE
