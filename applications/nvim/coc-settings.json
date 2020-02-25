@@ -1,15 +1,15 @@
 {
-	"coc.source.buffer.enable": false,
-	"languageserver": {
+  "coc.source.buffer.enable": false,
+  "languageserver": {
     "ccls": {
       "command": "ccls",
       "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
       "rootPatterns": [".ccls-root", "compile_commands.json"],
       "initializationOptions": {
-         "cache": {
-           "directory": ".ccls-cache"
-         }
-       }
+        "cache": {
+          "directory": ".ccls-cache"
+        }
+      }
     }
   }
 }
