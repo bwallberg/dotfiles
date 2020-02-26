@@ -30,6 +30,17 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'scrooloose/nerdcommenter'
 Plug 'heavenshell/vim-jsdoc'
 
+" evaluating
+
+" Replace vim-workspace? Easy Session manager
+Plug 'mhinz/vim-startify'
+
+" Wrap text in quotes and such, select in v mode S+<Surrounding charater>
+Plug 'tpope/vim-surround'
+
+" :TagbarToggle to show ctags for docs, does it work for JS?
+Plug 'majutsushi/tagbar'
+
 call plug#end()
 
 " PYTHON INTEGRATION
