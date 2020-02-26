@@ -5,8 +5,8 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'preservim/nerdtree'
 
 " navigation
+Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
-Plug 'thaerkh/vim-workspace'
 Plug 'dyng/ctrlsf.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'yuttie/comfortable-motion.vim'
@@ -31,9 +31,6 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'heavenshell/vim-jsdoc'
 
 " evaluating
-
-" Replace vim-workspace? Easy Session manager
-Plug 'mhinz/vim-startify'
 
 " Wrap text in quotes and such, select in v mode S+<Surrounding charater>
 Plug 'tpope/vim-surround'
@@ -98,12 +95,20 @@ let g:nord_underline = 1
 let g:nord_italic_comments = 1
 colorscheme nord
 
-" vim-workspace
-let g:workspace_session_disable_on_args = 1
-let g:workspace_session_directory = $HOME . '/.config/nvim/sessions/'
-let g:workspace_persist_undo_history = 0
-" Don't restore NERDTree when opening a session
-autocmd VimLeave * NERDTreeClose
+" Startify
+let g:startify_session_before_save = [
+        \ 'echo "Cleaning up before saving.."',
+        \ 'silent! NERDTreeClose'
+        \ ]
+
+let g:startify_lists = [
+			\ { 'type': 'sessions',  'header': ['   Sessions']       },
+			\ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+			\ { 'type': 'commands',  'header': ['   Commands']       },
+			\ ]
+
+let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'} ]
+let g:startify_session_persistence = 1
 
 " KEYMAP
 let mapleader = ','
@@ -149,8 +154,8 @@ vnoremap <silent> <S-k> :m '<-2<CR>gv=gv
 map <silent> <C-p> :Leaderf file --popup<CR>
 let g:Lf_CommandMap = {'<C-X>': ['<C-v>'], '<C-]>': ['<C-h>']}
 
-" Switch Session
-map <leader>p :source ~/.config/nvim/sessions/
+" Open Startify
+map <leader>p :Startify<CR>
 
 " clear highlights after search by pressing esc
 nnoremap <esc> :noh<return><esc>
