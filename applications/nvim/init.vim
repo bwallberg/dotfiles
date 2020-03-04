@@ -15,8 +15,6 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
 Plug 'arcticicestudio/nord-vim'
-Plug 'camspiers/animate.vim'
-Plug 'camspiers/lens.vim'
 
 " git
 Plug 'airblade/vim-gitgutter'
