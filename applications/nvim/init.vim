@@ -10,14 +10,16 @@ Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'dyng/ctrlsf.vim'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'yuttie/comfortable-motion.vim'
+Plug 'pechorin/any-jump.vim'
 
 " UI
 Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
-Plug 'arcticicestudio/nord-vim'
+Plug 'kyoz/purify', { 'rtp': 'vim' }
 
 " git
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 " code syntax & autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -90,8 +92,14 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
-" JS Syntax
+" Syntax
 let g:javascript_plugin_jsdoc = 1
+
+" Prettier
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1
+
 
 " TABS & SPACES
 set tabstop=2
@@ -111,17 +119,15 @@ set number
 set showmatch
 
 let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ }
+			\ 'colorscheme': 'purify',
+			\ }
 
-let g:nord_italic = 1
-let g:nord_underline = 1
-let g:nord_italic_comments = 1
-colorscheme nord
+let g:purify_italic = 0 
+colorscheme purify
 
 " Startify
 let g:startify_session_before_save = [
-        \ 'echo "Cleaning up before saving.."',
+       \ 'echo "Cleaning up before saving.."',
         \ 'silent! NERDTreeClose'
         \ ]
 
@@ -135,7 +141,7 @@ let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'} ]
 let g:startify_session_persistence = 1
 
 " KEYMAP
-let mapleader = ','
+let mapleader = ' '
 
 " Switch between buffers
 map <silent> <C-a> :bprev<CR>
@@ -161,12 +167,6 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" Jump between empty lines down & up
-nmap <silent> <C-space> {
-nmap <silent> <space> }
-vmap <silent> <C-space> {
-vmap <silent> <space> }
-
 " Move selected lines up & down
 nnoremap <silent> <S-j> :m .+1<CR>==
 nnoremap <silent> <S-k> :m .-2<CR>==
@@ -187,6 +187,9 @@ nnoremap <esc> :noh<return><esc>
 " NerdTree
 nmap <silent> <leader>k :NERDTreeToggle<CR>
 nmap <silent> <leader>l :NERDTreeFind<CR>
+
+" Prettier
+nmap <Leader>f <Plug>(Prettier)
 
 " Ctrlf
 map <C-f> :CtrlSF<space>
