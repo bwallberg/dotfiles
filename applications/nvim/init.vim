@@ -140,12 +140,15 @@ let g:startify_lists = [
 let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'} ]
 let g:startify_session_persistence = 1
 
+" NerdTree
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
+
 " KEYMAP
 let mapleader = ' '
 
 " Switch between buffers
-map <silent> <C-a> :bprev<CR>
-map <silent> <C-s> :bnext<CR>
+map <silent> <C-h> :bprev<CR>
+map <silent> <C-l> :bnext<CR>
 map <silent> <C-q> :bd<CR>
 
 " Toggle modes using tilde
