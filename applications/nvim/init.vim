@@ -25,6 +25,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+Plug 'leafgarland/typescript-vim'
 
 " comments
 Plug 'scrooloose/nerdcommenter'
@@ -118,6 +119,8 @@ set hidden
 set number
 set showmatch
 
+syntax on
+
 let g:lightline = {
 			\ 'colorscheme': 'purify',
 			\ }
@@ -137,11 +140,12 @@ let g:startify_lists = [
 			\ { 'type': 'commands',  'header': ['   Commands']       },
 			\ ]
 
-let g:startify_bookmarks = [ {'c': '~/.config/nvim/init.vim'} ]
 let g:startify_session_persistence = 1
 
 " NerdTree
-autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
+let NERDTreeShowHidden=1
+" TODO Doesn't work when the only window is nerdtree
+" autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
 
 " KEYMAP
 let mapleader = ' '
