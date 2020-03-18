@@ -93,6 +93,9 @@ else
   imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
 
+" JsDoc
+command! -register JsDoc call jsdoc#insert()
+
 " Syntax
 let g:javascript_plugin_jsdoc = 1
 
