@@ -8,7 +8,7 @@ Plug 'preservim/nerdtree'
 Plug 'mhinz/vim-startify'
 Plug 'Yggdroot/LeaderF', { 'do': './install.sh' }
 Plug 'dyng/ctrlsf.vim'
-Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'terryma/vim-multiple-cursors'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'pechorin/any-jump.vim'
 
@@ -202,7 +202,9 @@ nmap <silent> <leader>l :NERDTreeFind<CR>
 nmap <Leader>f <Plug>(Prettier)
 
 " Ctrlf
-map <C-f> :CtrlSF<space>
+imap <C-f> <esc><Plug>CtrlSFPrompt
+nmap <C-f> <Plug>CtrlSFCwordPath
+vmap <C-f> <Plug>CtrlSFVwordPath 
 
 let g:ctrlsf_auto_focus = {
     \ "at": "start",
