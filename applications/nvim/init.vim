@@ -15,7 +15,7 @@ Plug 'pechorin/any-jump.vim'
 " UI
 Plug 'ap/vim-buftabline'
 Plug 'itchyny/lightline.vim'
-Plug 'kyoz/purify', { 'rtp': 'vim' }
+Plug 'patstockwell/vim-monokai-tasty'
 
 " git
 Plug 'airblade/vim-gitgutter'
@@ -125,11 +125,11 @@ set showmatch
 syntax on
 
 let g:lightline = {
-			\ 'colorscheme': 'purify',
+			\ 'colorscheme': 'monokai_tasty',
 			\ }
 
-let g:purify_italic = 0 
-colorscheme purify
+let g:vim_monokai_tasty_italic = 1
+colorscheme vim-monokai-tasty
 
 " Startify
 let g:startify_session_before_save = [
