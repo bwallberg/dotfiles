@@ -58,6 +58,8 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> gk :call <SID>show_documentation()<CR>
+nmap <silent> ga  <Plug>(coc-codeaction)
+nmap <silent> gf  <Plug>(coc-fix-current)
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
