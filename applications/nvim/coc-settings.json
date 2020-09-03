@@ -11,5 +11,7 @@
         }
       }
     }
-  }
+  },
+  "diagnostic.maxWindowHeight": 16,
+  "signature.maxWindowHeight": 16
 }

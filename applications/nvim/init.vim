@@ -11,6 +11,7 @@ Plug 'dyng/ctrlsf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'yuttie/comfortable-motion.vim'
 Plug 'pechorin/any-jump.vim'
+Plug 'easymotion/vim-easymotion'
 
 " UI
 Plug 'ap/vim-buftabline'
@@ -26,20 +27,26 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sheerun/vim-polyglot'
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'leafgarland/typescript-vim'
+Plug 'tpope/vim-sleuth'
+Plug 'neoclide/jsonc.vim'
+
+" Wrap text in quotes and such, select in v mode S+<Surrounding charater>
+Plug 'tpope/vim-surround'
 
 " comments
 Plug 'scrooloose/nerdcommenter'
 Plug 'heavenshell/vim-jsdoc'
 
-" evaluating
-
-" Wrap text in quotes and such, select in v mode S+<Surrounding charater>
-Plug 'tpope/vim-surround'
-
-" :TagbarToggle to show ctags for docs, does it work for JS?
-Plug 'majutsushi/tagbar'
+" utility
+Plug 'christianrondeau/vim-base64'
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
+
+" System
+
+" Use system clipboard
+set clipboard=unnamed
 
 " PYTHON INTEGRATION
 let g:loaded_python_provider = 0
@@ -50,8 +57,7 @@ let g:python3_host_prog = '/usr/local/bin/python3'
 " coc
 let g:coc_global_extensions = [
     \ 'coc-tsserver',
-    \ 'coc-json',
-    \ 'coc-eslint']
+    \ 'coc-json']
 
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
@@ -101,12 +107,6 @@ command! -register JsDoc call jsdoc#insert()
 " Syntax
 let g:javascript_plugin_jsdoc = 1
 
-" Prettier
-let g:prettier#autoformat = 1
-let g:prettier#autoformat_require_pragma = 0
-let g:prettier#autoformat_config_present = 1
-
-
 " TABS & SPACES
 set tabstop=2
 set shiftwidth=2
@@ -147,10 +147,9 @@ let g:startify_lists = [
 
 let g:startify_session_persistence = 1
 
-" NerdTree
+" NerdTree & NerdTreeCommenter
 let NERDTreeShowHidden=1
-" TODO Doesn't work when the only window is nerdtree
-" autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" | b# | endif
+let g:NERDTrimTrailingWhitespace = 1
 
 " Script that closes buffer without closing window
 " https://vim.fandom.com/wiki/Deleting_a_buffer_without_closing_the_window
@@ -253,6 +252,9 @@ nnoremap <silent> <S-k> :m .-2<CR>==
 vnoremap <silent> <S-j> :m '>+1<CR>gv=gv
 vnoremap <silent> <S-k> :m '<-2<CR>gv=gv
 
+" Keep visual mode after indentation
+vnoremap < <gv
+vnoremap > >gv
 
 "LeaderF
 map <silent> <C-p> :Leaderf file --popup<CR>
@@ -273,13 +275,9 @@ nmap <Leader>f <Plug>(Prettier)
 
 " Ctrlf
 imap <C-f> <esc><Plug>CtrlSFPrompt
-nmap <C-f> <Plug>CtrlSFCwordPath
+nmap <C-f> <Plug>CtrlSFPrompt
 vmap <C-f> <Plug>CtrlSFVwordPath 
 
 let g:ctrlsf_auto_focus = {
     \ "at": "start",
 		\ }
-
-
-
-
